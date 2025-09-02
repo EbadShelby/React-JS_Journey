@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border
+  }
+  * {
+    @apply m-0 p-0
+  }
+  
+  html:focus-within { 
+    @apply scroll-smooth
+  }
+  html, body {
+    @apply min-h-dvh
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply align-middle max-w-full
+  }
+  input,
+  button,
+  textarea,
+  select {
+    @apply font-[inherit]
+  }
+  p {
+    @apply wrap-break-word text-pretty;
+  }
+}
+
+@layer theme {
+
+}
+
+@layer components {
+
+}
+
+@layer utilities {
+  
+}

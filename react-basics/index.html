@@ -10,7 +10,35 @@
     <title>react-basics</title>
   </head>
   <body>
-    <div class="text-5xl font-bold p-5">React basics</div>
+    <div class="js-container text-4xl font-bold p-5"></div>
+
+
+
+    <!-- ============================================================================== -->
     <script type="module" src="main.js"></script>
+
+    <!-- React External Library -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- React for Web External Library -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <!-- Babel = Translate JSX to JS -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+      const container = document.querySelector('.js-container');
+
+      const button = <button class="border-2 p-4 rounded-2xl bg-red-600 text-white border-black">Subscribe</button>;
+      const paragraph = <p>This is text</p>;
+      const div = (
+        <div class="border-4 w-56 aspect-square">
+          <p>I'm inside a div</p>
+          <p>Me Also</p>
+          <p>Me too</p>
+        </div>
+      );
+
+      ReactDOM.createRoot(container).render(div);
+
+    </script>
   </body>
 </html>

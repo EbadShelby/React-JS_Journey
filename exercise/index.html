@@ -29,41 +29,44 @@
       // const name = <p>My name is Joe</p>
       // const goodButton = <button>Good job!</button>
 
-      const today = dayjs().format('MMMM D');
-      const time = dayjs().format('hh:mm');
+      
 
-      const productCost = 50;
-      const shippingCost = 10;
+      const root = ReactDOM.createRoot(container);
 
-      const content = (
-        <div class="inline-block">
-          <div class="border-2 mb-2 p-2 border-pink-400">
-            <button>Good Job!</button>
-            <p>My name is Joe</p>
+      setInterval(()=> {
+        const today = dayjs().format('MMMM D');
+        const time = dayjs().format('hh:mm:ss');
+
+        const productCost = 50;
+        const shippingCost = 10;
+
+        const content = (
+          <div class="inline-block">
+            <div class="border-2 mb-2 p-2 border-pink-400">
+              <button>Good Job!</button>
+              <p>My name is Joe</p>
+            </div>
+
+            <div class="border-2 p-2 mb-2 border-pink-400">
+              <p>Contton socks</p>  
+              <p>Price: $20</p>
+            </div>
+
+            <div class="border-2 p-2 border-pink-400">
+              <p>Product cost: $ {productCost}</p>
+              <p>Shipping cost: $ {shippingCost}</p>
+              <p>Total cost: $ {productCost + shippingCost}</p>
+              <button> Place your ordor</button>
+            </div>
+
+            <div class="border-2 p-2 mb-2 border-pink-400">
+              <p>Today is {today}</p>
+              <p class="font-bold">Current Time: {time}</p>
+            </div>
           </div>
-
-          <div class="border-2 p-2 mb-2 border-pink-400">
-            <p>Contton socks</p>  
-            <p>Price: $20</p>
-          </div>
-
-          <div class="border-2 p-2 border-pink-400">
-            <p>Product cost: $ {productCost}</p>
-            <p>Shipping cost: $ {shippingCost}</p>
-            <p>Total cost: $ {productCost + shippingCost}</p>
-            <button> Place your ordor</button>
-          </div>
-
-          <div class="border-2 p-2 mb-2 border-pink-400">
-            <p>Today is {today}</p>
-            <p>Current Time: {time}</p>
-          </div>
-        </div>
-      )
-
-
-
-      ReactDOM.createRoot(container).render(content);
+        )
+        root.render(content);
+      }, 1000);
 
     </script>
     

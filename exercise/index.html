@@ -9,7 +9,52 @@
     <title>Exercise 1</title>
   </head>
   <body>
-    <div>working</div>
+    <div class="js-container"></div>
+
+    <!-- ======================================================= -->
     <script type="module" src="main.js"></script>
+
+        <!-- React External Library -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <!-- React for Web External Library -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <!-- Babel = Translate JSX to JS -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+      const container = document.querySelector('.js-container');
+      
+      // const name = <p>My name is Joe</p>
+      // const goodButton = <button>Good job!</button>
+
+      const productCost = 50;
+      const shippingCost = 10;
+
+      const content = (
+        <div class="inline-block">
+          <div class="border-2 mb-2 p-2 border-pink-400">
+            <button>Good Job!</button>
+            <p>My name is Joe</p>
+          </div>
+
+          <div class="border-2 p-2 mb-2 border-pink-400">
+            <p>Contton socks</p>  
+            <p>Price: $20</p>
+          </div>
+
+          <div class="border-2 p-2 border-pink-400">
+            <p>Product cost: $ {productCost}</p>
+            <p>Shipping cost: $ {shippingCost}</p>
+            <p>Total cost: $ {productCost + shippingCost}</p>
+            <button> Place your ordor</button>
+          </div>
+
+        </div>
+      )
+
+      ReactDOM.createRoot(container).render(content);
+
+    </script>
+    
   </body>
 </html>

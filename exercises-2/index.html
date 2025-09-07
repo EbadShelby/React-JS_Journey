@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css">
+  <title>Exercises 2</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- ======================================================= -->
+  <script type="module" src="main.js"></script>
+  <!-- React External Library -->
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <!-- React for Web External Library -->
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <!-- Babel = Translate JSX to JS -->
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+    function LoginForm() {
+      return (
+        <>
+          <div>
+            <input type="email" placeholder="Email"></input>
+          </div>
+          <div>
+            <input type="password" placeholder="Password"></input>
+          </div>
+
+          <button>Login</button>
+          <button>Sign up</button>
+        </>
+      )
+    }
+    function ProductDetails({ name, price, discountPrice, imageSrc }) {
+      return (
+        <div class="border-2 inline-block mx-2 p-2">
+          <img class="w-40" src={imageSrc} />
+          <p>{name}</p>
+          {discountPrice ? (
+            <>
+              <p><del>Price: {price}</del></p>
+              <p>Discount price: {discountPrice}</p>
+            </>
+          ) :
+            <p>Price: {price}</p>
+          }
+          <button>Add to Cart</button>
+        </div>
+      )
+    }
+
+    function App() {
+      return (
+        <>
+          <p>Hello, welcome to my website</p>
+          <LoginForm />
+          <br />
+          <br />
+          <ProductDetails name="Cotton Socks" price="10.90" discountPrice="5.45" imageSrc="./cotton-socks.png" />
+          <ProductDetails name="Tennis balls" price="6.00" imageSrc="./tennis-balls.png" />
+          <ProductDetails name="Plain T-Shirt" price="7.99" imageSrc="./plain-t-shirt.png" />
+        </>
+      );
+    }
+
+    const container = document.querySelector('#app');
+    const root = ReactDOM.createRoot(container);
+    root.render(<App />);
+
+  </script>
+
+
+
+
+</body>
+
+</html>

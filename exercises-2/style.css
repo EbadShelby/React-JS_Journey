@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border
+  }
+  * {
+    @apply m-0 p-0
+  }
+  
+  html:focus-within { 
+    @apply scroll-smooth
+  }
+
+  html {
+    @apply bg-gray-200;
+  }
+
+  html, body {
+    @apply min-h-dvh
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply align-middle max-w-full
+  }
+  input,
+  button,
+  textarea,
+  select {
+    @apply font-[inherit]
+  }
+  p {
+    @apply wrap-break-word text-pretty;
+  }
+  /* ↑ === CSS Reset === ↑ */
+
+  input,button {
+    @apply border-2 p-1 border-purple-600
+  }
+  input {
+    @apply m-1
+  }
+}
+
+@layer theme {
+
+}
+
+@layer components {
+}
+
+@layer utilities {
+
+}

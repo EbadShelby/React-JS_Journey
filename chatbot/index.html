@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <title>chatbot</title>
+</head>
+
+<body>
+  <div class="js-container text-2xl"></div>
+
+  <!-- ======================================================= -->
+  <script type="module" src="main.js"></script>
+
+  <!-- React External Library -->
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <!-- React for Web External Library -->
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <!-- Babel = Translate JSX to JS -->
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script type="text/babel">
+    function ChatInput() {
+      return (
+        <div>
+          <input class="bg-gray-100 w-80 text-lg"
+            placeholder="Send a message to Chatbot" />
+          <button>Send</button>
+        </div>
+      );
+    }
+
+    function ChatMessage({ message, sender }) {
+      // const message = props.message;
+      // const sender = props.sender;
+      // destructuring
+      // const {message, sender} = props;
+
+      /*
+      if (sender === 'robot') {
+        return (
+        <div>
+          <img class="w-15 border-3 p-1 border-pink-700 rounded-full" src="public/ai-svgrepo-com.svg" alt="user-profile-icon"></img>
+          <p>{message}</p>
+        </div>
+        );
+      } else {
+        return (
+        <div>
+          <img class="w-15 border-3 p-1 border-pink-700 rounded-full" src="public/user-hand-up-svgrepo-com.svg" alt="user-profile-icon"></img>
+          <p>{message}</p>
+        </div>
+        );
+      }
+        */
+
+      return (
+        <div>
+          {sender === 'robot' &&
+            (<img class="w-15 border-3 p-1 border-purple-700 rounded-full" src="public/ai-svgrepo-com.svg" alt="user-profile-icon"></img>)
+          }
+          {message}
+          {sender === 'user' &&
+            (<img class="w-15 border-3 p-1 border-purple-700 rounded-full" src="public/user-hand-up-svgrepo-com.svg" alt="user-profile-icon"></img>)
+          }
+        </div>
+
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <ChatInput />
+          <ChatMessage
+            message="hello chatbot"
+            sender="user" />
+          <ChatMessage
+            message="hello! How can I help you?"
+            sender="robot" />
+          <ChatMessage
+            message="can you get me todays date?"
+            sender="user" />
+          <ChatMessage
+            message="Today is September 6"
+            sender="robot" />
+        </>
+      );
+    }
+
+
+    const container = document.querySelector('.js-container');
+
+    const root = ReactDOM.createRoot(container);
+
+    root.render(<App />);
+  </script>
+
+</body>
+
+</html>
